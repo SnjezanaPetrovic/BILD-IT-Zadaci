@@ -12,14 +12,14 @@ public class Zadatak1 {
 		// 100
 		// ili je djeljiva sa 400
 		int countYears = 0;
-		int countNum = 0;
+		
 		for (int i = 101; i <= 2100; i++) {
 			if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
 				System.out.print(i + " ");
-				countNum++;
 				countYears++;
+				
 				// podesimo da ispisuje 10 u redu
-				if (countNum % 10 == 0) {
+				if (countYears % 10 == 0) {
 					System.out.println();
 				}
 
