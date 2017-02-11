@@ -13,28 +13,29 @@ public class Zadatak4 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		
+                try {
+		    // Uzimamo od korisnika broj redova i kolona
+		    System.out.println("Unesite broj redova i kolona u 2D nizu: ");
+		    int row = input.nextInt();
+		    int column = input.nextInt();
 
-		// Uzimamo od korisnika broj redova i kolona
-		System.out.println("Unesite broj redova i kolona u 2D nizu: ");
-		int row = input.nextInt();
-		int column = input.nextInt();
-
-		// Napravimo 2D niz i uzmemo vrijednosti elemenata od korisnika
-		double[][] matrix = new double[row][column];
-		System.out.println("Unesite vrijednosti u 2D niz: ");
-		for (int i = 0; i < matrix.length; i++) {
+		    // Napravimo 2D niz i uzmemo vrijednosti elemenata od korisnika
+		    double[][] matrix = new double[row][column];
+		    System.out.println("Unesite vrijednosti u 2D niz: ");
+		    for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				matrix[i][j] = input.nextDouble();
 
 			}
 
-		}
-		input.close();
-		// Pozivamo metodu koja pronalazi lokaciju najvećeg elementa u nizu i
-		// ispisujemo je korisniku
-		try {
-			int[] largestEl = locateLargest(matrix);
-			System.out.println("Lokacija najvećeg elementa u nizu je: " + largestEl[0] + "," + largestEl[1]);
+		    }
+		    input.close();
+		    // Pozivamo metodu koja pronalazi lokaciju najvećeg elementa u nizu i
+		    // ispisujemo je korisniku
+		
+		    int[] largestEl = locateLargest(matrix);
+		    System.out.println("Lokacija najvećeg elementa u nizu je: " + largestEl[0] + "," + largestEl[1]);
 		} catch (Exception ex) {
 			System.out.println("Došlo je do greške.");
 		}
