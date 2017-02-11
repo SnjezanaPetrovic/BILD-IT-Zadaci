@@ -13,18 +13,27 @@ public class Zadatak1 {
 		// Uzimamo od korisnika početni,krajnji i broj koji odredjuje koliko će
 		// brojeva biti u jednom redu
 		Scanner input = new Scanner(System.in);
-		System.out.println("Unesite početni broj: ");
-		int num1 = input.nextInt();
-		System.out.println("Unesite krajnji broj: ");
-		int num2 = input.nextInt();
-		System.out.println("Unesite količinu brojeva u redu: ");
-		int numberPerRow = input.nextInt();
-		input.close();
+		try{
+		    System.out.println("Unesite početni broj: ");
+		    int num1 = input.nextInt();
+	            System.out.println("Unesite krajnji broj: ");
+		    int num2 = input.nextInt();
+		    System.out.println("Unesite količinu brojeva u redu: ");
+		    int numberPerRow = input.nextInt();
+		    input.close();
 
-		// Pozivamo metodu da ispiše sve proste brojeve u tom rasponu
-		try {
+		    // Vršimo validaciju da moraju uneseni brojevi biti veći od 0 i da
+		    // prvi mora biti manji od drugog
+		
+		    if (num1 < 1 || num1 > num2) {
+			System.out.println("Brojevi moraju biti veći od 0 i prvi mora biti veći od drugog !");
+		    } else if (numberPerRow < 1) {
+			System.out.println("Broj za ispis po liniji mora biti veci od 0 !");
+		    } else {
+                    // Pozivamo metodu da ispiše sve proste brojeve u tom rasponu
+
 			printPrime(num1, num2, numberPerRow);
-
+			}
 		} catch (Exception ex) {
 			System.out.println("Došlo je do greške.");
 		}
