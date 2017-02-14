@@ -22,9 +22,14 @@ public class Zadatak1 {
 			double amount = input.nextDouble();
 			System.out.println("Unesite broj mjeseci nakon kojeg želite znati stanje na računu: ");
 			int months = input.nextInt();
-			//Ispisujemo rezultat
-			System.out.println("Stanje na računu će biti: " + df.format(balance(amount, months)));
-
+			if (amount >= 0 && months > 0) {
+				// Ispisujemo rezultat
+				System.out.println("Stanje na računu će biti: " + df.format(balance(amount, months)));
+			} else if (months == 0) {
+				System.out.println("Stanje na računu je isto.");
+			} else {
+				System.out.println("Unesite vrijednosti veće od 0.");
+			}
 		} catch (Exception ex) {
 			System.out.println("Došlo je do greške.");
 		}

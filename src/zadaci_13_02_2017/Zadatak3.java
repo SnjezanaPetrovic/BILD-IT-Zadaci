@@ -14,9 +14,9 @@ public class Zadatak3 {
 
 		try {
 			System.out.println("Unesite prvi string: ");
-			String s1 = input.nextLine();
+			String s1 = input.nextLine().toLowerCase();
 			System.out.println("Unesite drugi string: ");
-			String s2 = input.nextLine();
+			String s2 = input.nextLine().toLowerCase();
 			System.out.print("Zajednički prefix je: ");
 			printPrefix(s1, s2);
 
@@ -27,13 +27,16 @@ public class Zadatak3 {
 		input.close();
 
 	}
-/**
- * 
- * @param s1 prvi string
- * @param s2 drugi string
- */
+
+	/**
+	 * 
+	 * @param s1
+	 *            prvi string
+	 * @param s2
+	 *            drugi string
+	 */
 	public static void printPrefix(String s1, String s2) {
-		
+
 		int[] array = { s1.length(), s2.length() };
 		java.util.Arrays.sort(array);
 
