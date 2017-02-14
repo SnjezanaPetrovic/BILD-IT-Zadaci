@@ -22,6 +22,7 @@ public class Zadatak3 {
 
 		} catch (Exception ex) {
 			System.out.println("Došlo je do greške.");
+			input.nextLine();
 		}
 		input.close();
 
@@ -32,12 +33,15 @@ public class Zadatak3 {
  * @param s2 drugi string
  */
 	public static void printPrefix(String s1, String s2) {
+		
+		int[] array = { s1.length(), s2.length() };
+		java.util.Arrays.sort(array);
 
 		if (s1.charAt(0) != s2.charAt(0)) {
 			System.out.println("Ne postoji zajednički prefix.");
 
 		} else {
-			for (int i = 0; i < s1.length(); i++) {
+			for (int i = 0; i < array[0]; i++) {
 
 				if (s1.charAt(i) == s2.charAt(i)) {
 					System.out.print(s1.charAt(i));
