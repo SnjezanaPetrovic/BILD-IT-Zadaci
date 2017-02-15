@@ -18,6 +18,8 @@ public class Zadatak2 {
 			int year2 = input.nextInt();
 			if (year1 > year2) {
 				System.out.println("Početna godina mora biti manja od krajnje.");
+			} else if (year1 < -45) {
+				System.out.println("Prestupne godine se računaju samo od 45g. p.n.e.");
 			} else {
 				printLeapYears(year1, year2);
 			}
