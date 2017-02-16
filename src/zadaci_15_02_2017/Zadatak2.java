@@ -1,5 +1,6 @@
 package zadaci_15_02_2017;
 
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Zadatak2 {
@@ -21,7 +22,10 @@ public class Zadatak2 {
 			if (month < 1 || month > 12) {
 				System.out.println("Niste dobro unijeli mjesec.");
 			} else {
-				System.out.println("Broj dana u mjesecu je: " + getNumberOfDays(month, year));
+				String nameOfTheMonth = getNameOfTheMonth(month);
+
+				System.out.println(nameOfTheMonth + " " + year + " " + printPastFuture(month, year) + " "
+						+ getNumberOfDays(month, year) + " dan/a.");
 			}
 
 		} catch (Exception ex) {
@@ -53,6 +57,65 @@ public class Zadatak2 {
 
 		// Odredjujemo da li je godina prestupna
 		return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+
+	}
+
+	// Metoda koja vraća ime mjeseca
+	public static String getNameOfTheMonth(int month) {
+
+		String nameOfTheMonth = "";
+
+		switch (month) {
+		case 1:
+			nameOfTheMonth = "Januar";
+			break;
+		case 2:
+			nameOfTheMonth = "Februar";
+			break;
+		case 3:
+			nameOfTheMonth = "Mart";
+			break;
+		case 4:
+			nameOfTheMonth = "April";
+			break;
+		case 5:
+			nameOfTheMonth = "Maj";
+			break;
+		case 6:
+			nameOfTheMonth = "Jun";
+			break;
+		case 7:
+			nameOfTheMonth = "Juli";
+			break;
+		case 8:
+			nameOfTheMonth = "Avgust";
+			break;
+		case 9:
+			nameOfTheMonth = "Septembar";
+			break;
+		case 10:
+			nameOfTheMonth = "Oktobar";
+			break;
+		case 11:
+			nameOfTheMonth = "Novembar";
+			break;
+		case 12:
+			nameOfTheMonth = "Decembar";
+			break;
+
+		}
+		return nameOfTheMonth;
+
+	}
+
+	public static String printPastFuture(int month, int year) {
+
+		GregorianCalendar currentTime = new GregorianCalendar();
+		if (month > currentTime.get(GregorianCalendar.MONTH) + 1 && year >= currentTime.get(GregorianCalendar.YEAR)) {
+			return "će imati";
+		} else {
+			return "je imao";
+		}
 
 	}
 
