@@ -50,9 +50,12 @@ public class Zadatak1 {
 
 	public static boolean isValidCity(String city) {
 
-		for (int i = 0; i < city.length(); i++) {
-			char ch = city.charAt(i);
-			if (!Character.isLetter(ch) || ch != ' ' || ch != '-') {
+		String cityShortened = city.replaceAll(" ", "");
+		String cityShort = cityShortened.replaceAll("-", "");
+
+		for (int i = 0; i < cityShort.length(); i++) {
+			char ch = cityShort.charAt(i);
+			if (!Character.isLetter(ch)) {
 				return false;
 			}
 		}
