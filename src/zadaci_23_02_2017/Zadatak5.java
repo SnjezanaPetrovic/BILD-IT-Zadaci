@@ -13,16 +13,16 @@ public class Zadatak5 {
 		Scanner input = new Scanner(System.in);
 		try {
 			// Uzimamo broj od korisnika
-			System.out.println("Unesite cijeli pozitivan broj manji od 100: ");
+			System.out.println("Unesite cijeli pozitivan broj veći od 1 i manji od 100: ");
 			int number = input.nextInt();
 			// provjeravamo da li je broj pozitivan
-			if (number > 0 && number <= 100) {
+			if (number > 1 && number <= 100) {
 				displayPyramid(number);
 			} else {
-				System.out.println("Broj mora biti pozitivan i manji od 100 .");
+				System.out.println("Broj mora biti veći od 1 i manji od 100 .");
 			}
 		} catch (Exception ex) {
-			System.out.println("Došlo je do greške.Unesite cijeli pozitivan broj manji od 100.");
+			System.out.println("Došlo je do greške.Unesite cijeli pozitivan broj veći od 1 i manji od 100.");
 			input.nextLine();
 		}
 		input.close();
