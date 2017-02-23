@@ -13,13 +13,13 @@ public class Zadatak5 {
 
 		try {
 			// Uzimamo vrijednost n od korisnika
-			System.out.println("Unesite vrijednost n veću od 1: ");
+			System.out.println("Unesite vrijednost n veću od 1 a manju od 25: ");
 			int n = input.nextInt();
 			// Pošto matrica 1*1 nema smisla stavljamo da je veća od 1
-			if (n > 1) {
+			if (n > 1 && n < 25) {
 				printMatrix(n);
 			} else {
-				System.out.println("n mora biti veće od 1.");
+				System.out.println("n mora biti veće od 1 a manja od 25.");
 			}
 		} catch (Exception ex) {
 			System.out.println("Došlo je do greške.Molimo unesite cijeli broj.");
